@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+    
+<head>
+    
+    <meta charset="UTF-8">
+    <title>Doctor Who Stories</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    <script src="script/angular.min.js"></script>
+    <script src="script/angular-route.min.js"></script>  
+    <script src="script/angular-animate.min.js"></script>
+    
+    <script src="script/app/WhoStoryApp.js"></script>
+    <script src="script/app/WhoStoryService.js"></script>
+    <script src="script/app/results/WhoStoryResultController.js"></script>
+    <script src="script/app/detail/WhoStoryDetailController.js"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+    
+</head>
+
+<body>
+	
+		
+	<div class="logo-top">
+
+		<div class="container">
+
+			<div class="row">
+
+				<div class="col-sm-12">
+		
+					<img src="images/DW-logo.jpg" alt="Doctor Who Logo" title="Doctor Who Logo" />
+					
+				</div>
+
+			</div>
+
+		</div>
+		
+	</div>
+	
+	<section class="main" ng-app="WhoStoryApp">
+
+		<div class="container">
+
+			<div class="row">
+
+				<div class="col-sm-12">
+
+					<div class="viewContainer" ng-view></div>
+
+				</div>
+
+			</div>
+
+		</div>
+	
+	</section>
+      
+    
+
+</body>
+    
+</html>

@@ -1,0 +1,42 @@
+
+        <div class="data-error" ng-show="storyControl.isDataError">
+            {{storyControl.errorMessage}}
+        </div>
+
+        <div class="data-success" ng-hide="storyControl.isDataError">
+            
+            <div class="storyDetail top">
+                
+                <div class="logo-top">
+                    <img src="images/logo-new.png" alt="Doctor Who Logo" title="Doctor Who Logo" />
+                </div>
+                
+            </div>
+            
+            <div class="storyDetail content">
+                 
+                <h1>{{storyControl.storyDetails.title}}</h1>               
+                
+                <div class="photo">
+                    <img ng-src="images/story/{{storyControl.storyDetails.prodnum | lowercase}}.jpg" alt="Photo from {{storyControl.storyDetails.title}}" title="{{storyControl.storyDetails.title}}" />
+                </div>
+                
+                <div class="stats">
+                    <h3>Doctor: {{storyControl.storyDetails.doctor}}</h3>
+                    <h3>Companions: {{storyControl.storyDetails.companions}}</h3>
+                    <h3>Villians: {{storyControl.storyDetails.villians}}</h3>
+                    <h3>Season: {{storyControl.storyDetails.season}}</h3>
+                    <h3>Production number: {{storyControl.storyDetails.prodnum | uppercase}}</h3>
+                </div>
+                
+                <p>{{storyControl.storyDetails.synopsis}}</p> 
+                
+            </div>
+            
+            <div class="storyDetail bottom">
+                
+                <a class="back-btn" href="#/results">Back to story list</a>
+                
+            </div>
+
+        </div>

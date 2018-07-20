@@ -1,0 +1,8 @@
+                
+                <div class="paging-info">
+                    Found {{storyControl.pagingTotalResults}} Doctor Who stories{{storyControl.pagingKeywordStr}}. Page {{storyControl.pagingcurrentPage}} of {{storyControl.pagingTotalPages}}
+                </div>
+                
+                <div class="pages">
+                    <a class="page{{storyControl.pagingcurrentPage === page ? ' current' : ''}}" ng-click="storyControl.changePage(page)" ng-repeat="page in storyControl.storyPages">{{page}}</a> 
+                </div>  

@@ -1,0 +1,89 @@
+
+        <div class="data-error" ng-show="storyControl.isDataError">
+            {{storyControl.errorMessage}}
+        </div>
+
+        <div class="data-success" ng-hide="storyControl.isDataError">
+                 
+            <div class="paging-holder top">
+
+                
+                <div ng-include="'script/app/results/paging.html'"></div>
+                
+            </div>
+            
+            <section class="resultsContent">
+                     
+                <div class="icon settings" ng-click="storyControl.updateGlobalHideSetting();" ng-model="storyControl.hideSettings">
+                    <img src="images/settings.png" alt="Settings icon" title="Settings" />
+                    <span ng-if="storyControl.hideSettings">Show</span>
+                    <span ng-if="!storyControl.hideSettings">Hide</span> Settings
+                </div>
+                
+                <div class="search" ng-hide="storyControl.hideSettings">
+                    
+                    <h2>Filtering</h2>
+
+                    <input ng-keyup="storyControl.setFilter('keyword', storyControl.keyword);" ng-model="storyControl.keyword" placeholder="Keyword search" class="submit-txt" value="{{storyControl.keyword}}" autofocus>
+
+                    <select ng-model="seasonFilter.season" ng-change="storyControl.setFilter('season', seasonFilter.season);">
+                        <option value="" ng-selected="!storyControl.season">Select season</option>
+                        <option value="{{season}}" ng-selected="storyControl.season == season" ng-repeat="season in storyControl.seasonArray">Season {{season}}</option>
+                    </select>
+
+                    <button class="reset-btn" ng-click="storyControl.reset();">Reset Filters</button>
+                    
+                    <h2>Sorting</h2>
+
+                    <label class="formgroup">
+                        <select ng-model="storyControl.storyOrder" ng-change="storyControl.setFilter('sort', storyControl.storyOrder);">
+                            <option value="title">Sort by story title</option>
+                            <option value="transnum" selected="selected">Sort by transmission order</option>
+                            <option value="prodnum">Sort by production order</option>
+                        </select>
+                    </label>
+                    
+                    <label class="formgroup">
+                        <input type="radio" ng-model="storyControl.reverse" ng-click="storyControl.setFilter('reverse', false);" ng-value="false" checked>
+                        Ascending
+                    </label>
+                    
+                    <label class="formgroup">
+                        <input type="radio" ng-model="storyControl.reverse" ng-click="storyControl.setFilter('reverse', true);" ng-value="true">
+                        Descending
+                    </label>
+
+                </div>
+
+                <ul class="storyList">
+                    
+                    <li class="story cf" ng-repeat="item in storyControl.theStories">
+                        
+                        <div class="storyContainer">
+                            
+                            <a class="thumb" href="#/detail/{{item.shorttitle}}">
+                                <img ng-src="images/story/{{item.prodnum | lowercase}}.jpg" alt="Photo from {{item.title}}" title="{{item.title}}" />
+                            </a>  
+                            
+                            <div class="info">
+                                <h2><a href="#/detail/{{item.shorttitle}}">{{item.title}}</a></h2>
+                                <h3>Doctor: {{item.doctor}}</h3>
+                                <h3>Companions: {{item.companions}}</h3>
+                                <h3>Villians: {{item.villians}}</h3>                
+                            </div>
+                            
+                        </div>
+                        
+                    </li> 
+                    
+                </ul>
+                
+            </section>
+
+            <div class="paging-holder bottom">
+                
+                <div ng-include="'script/app/results/paging.html'"></div>
+                
+            </div>            
+
+        </div>
