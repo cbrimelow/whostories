@@ -191,9 +191,7 @@ a.small {
     font-size: 14px;
     display: inline-block;
     vertical-align: top;
-    width: 30%;
     margin: 0;
-    padding: 20px 20px 0;
     z-index: 20;
     text-align: left;
 }
@@ -330,7 +328,6 @@ a.small {
 
 .storyList {
     display: inline-block;
-    width: 66%;
     margin: 20px auto 0;
     z-index: 10;
 }
@@ -347,7 +344,7 @@ a.small {
 }
 
 .storyList li .storyContainer {
-    border-bottom: 1px dotted black;
+    border-bottom: 1px solid #ddd;
     width: 100%;
     margin: 0 auto;
     padding: 0 0 20px;
@@ -507,7 +504,6 @@ a.small {
 .storyDetail.bottom {
     margin: 0 auto 20px;
     padding: 20px 0;
-    border-radius: 0 0 20px 20px;
     text-align: center;
 }
 .storyDetail h1 {
@@ -587,9 +583,6 @@ a.small {
     .storyList, .paging-holder, .resultsContent {
 
     }
-    .search {
-        width: 100%;
-    }
     .resultsContent .icon.settings {
         display: block;
     }
@@ -598,9 +591,6 @@ a.small {
     }
     .paging-holder.top {
         margin-top: 10px;
-    }
-    .storyList {
-        padding-left: 20px;
     }
     .storyList li .storyContainer {
         width: 100%;
